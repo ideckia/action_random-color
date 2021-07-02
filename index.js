@@ -13,7 +13,7 @@ class RandomColor {
 		}
 	}
 	
-	init() {
+	init(_) {
 	}
 	
 	getRandomColorHex() {
