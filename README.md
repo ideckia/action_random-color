@@ -17,12 +17,12 @@ Generate random color
     "state": {
         "text": "action_random-color",
         "bgColor": "00ff00",
-        "action": {
+        "actions": [{
             "name": "random-color",
             "props": {
                 "setText": false
             }
-        }
+        }]
     }
 }
 ```
