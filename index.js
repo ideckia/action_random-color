@@ -27,24 +27,16 @@ class RandomColor {
     }
 
     execute(currentState) {
-        return new Promise((resolve, _) => {
-            const color = this.getRandomColorHex();
-            if (this.props.setText) {
-                currentState.text = '#' + color;
-            }
-            currentState.bgColor = 'ff' + color;
-            resolve(currentState);
-        });
+        const color = this.getRandomColorHex();
+        if (this.props.setText) {
+            currentState.text = '#' + color;
+        }
+        currentState.bgColor = 'ff' + color;
+        return Promise.resolve(currentState);
     }
 
     onLongPress(currentState) {
-        return new Promise(function (resolve, _) {
-            resolve(currentState);
-        });
-    }
-
-    toJson() {
-        return { name: "random-color", props: this.props };
+        return Promise.resolve(currentState);
     }
 
     getActionDescriptor() {
