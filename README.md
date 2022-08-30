@@ -8,7 +8,7 @@ Generate random color
 
 | Name | Type | Default | Description | Possible values |
 | ----- |----- | ----- | ----- | ----- |
-| setText | Bool | true | Sets the text of the item with the HEX color | null |
+| set_text | Bool | true | Sets the text of the item with the HEX color | null |
 
 ## Example in layout file
 
@@ -20,7 +20,7 @@ Generate random color
         "actions": [{
             "name": "random-color",
             "props": {
-                "setText": false
+                "set_text": false
             }
         }]
     }
