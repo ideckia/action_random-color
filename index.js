@@ -8,8 +8,8 @@ class RandomColor {
             this.props = {};
         }
 
-        if (this.props.setText == null) {
-            this.props.setText = true;
+        if (this.props.set_text == null) {
+            this.props.set_text = true;
         }
     }
 
@@ -28,7 +28,7 @@ class RandomColor {
 
     execute(currentState) {
         const color = this.getRandomColorHex();
-        if (this.props.setText) {
+        if (this.props.set_text) {
             currentState.text = '#' + color;
         }
         currentState.bgColor = 'ff' + color;
@@ -44,7 +44,7 @@ class RandomColor {
             name: "random-color",
             description: "Pick a random color each touch",
             props: [{
-                "setText": false
+                "set_text": false
             }]
         };
     }
