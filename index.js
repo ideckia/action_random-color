@@ -32,21 +32,21 @@ class RandomColor {
             currentState.text = '#' + color;
         }
         currentState.bgColor = 'ff' + color;
-        return Promise.resolve(currentState);
+        return Promise.resolve({ state: currentState });
     }
 
     onLongPress(currentState) {
-        return Promise.resolve(currentState);
+        return Promise.resolve({ state: currentState });
     }
 
     getActionDescriptor() {
-        return {
+        return Promise.resolve({
             name: "random-color",
             description: "Pick a random color each touch",
             props: [{
                 "set_text": false
             }]
-        };
+        });
     }
 }
 
