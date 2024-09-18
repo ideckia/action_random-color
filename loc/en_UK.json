@@ -1,0 +1,10 @@
+[
+	{
+		"id": "action_description",
+		"text": "Pick a random color each touch"
+	},
+	{
+		"id": "prop_set_text",
+		"text": "Show the hex value of the color."
+	}
+]

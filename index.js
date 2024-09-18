@@ -1,8 +1,11 @@
+const path = require('path');
+
 class RandomColor {
 
-    setup(props, server) {
+    setup(props, core) {
         this.props = props == null ? {} : props;
-        this.server = server;
+        this.core = core;
+        this.localizedTexts = core.data.getLocalizations(path.join(__dirname, 'loc'));
 
         if (this.props == null) {
             this.props = {};
@@ -40,11 +43,15 @@ class RandomColor {
     }
 
     getActionDescriptor() {
+        const locale = this.core.data.getCurrentLocale();
         return Promise.resolve({
             name: "random-color",
-            description: "Pick a random color each touch",
+            description: this.localizedTexts.tr(locale, "action_description"),
             props: [{
-                "set_text": false
+                name: "set_text",
+                type: "Bool",
+                defaultValue: "true",
+                description: this.localizedTexts.tr(locale, "prop_set_text")
             }]
         });
     }
